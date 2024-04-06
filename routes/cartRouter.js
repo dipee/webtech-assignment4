@@ -27,19 +27,45 @@ router.get("/:id", getCart, (req, res) => {
   res.json(res.cart);
 });
 
-// Update a product from user's cart
-router.patch("/:id", getCart, async (req, res) => {
-  if (req.body.userId != null) {
-    res.cart.userId = req.body.userId;
+//get all carts of a user
+router.get("/user/:id", async (req, res) => {
+  try {
+    const carts = await Cart.find({ userId: req.params.id });
+    res.json(carts);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
   }
-  if (req.body.products != null) {
-    res.cart.products = req.body.products;
-  }
+});
+
+//add product to cart
+router.post("/:id", getCart, async (req, res) => {
+  res.cart.products.push(req.body);
   try {
     const updatedCart = await res.cart.save();
     res.json(updatedCart);
   } catch (err) {
     res.status(400).json({ message: err.message });
+  }
+});
+
+// remove item from cart
+router.delete("/:id", getCart, async (req, res) => {
+  res.cart.products.pull(req.body);
+  try {
+    const updatedCart = await res.cart.save();
+    res.json(updatedCart);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+});
+
+//delete a cart by ID
+router.delete("/:id", getCart, async (req, res) => {
+  try {
+    await res.cart.deleteOne();
+    res.json({ message: "Cart deleted" });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
   }
 });
 

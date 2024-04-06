@@ -27,6 +27,16 @@ router.get("/:id", getOrder, (req, res) => {
   res.json(res.order);
 });
 
+// get all orders of a user
+router.get("/user/:id", async (req, res) => {
+  try {
+    const orders = await Order.find({ userId: req.params.id });
+    res.json(orders);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
 // Middleware to get order by ID
 async function getOrder(req, res, next) {
   let order;

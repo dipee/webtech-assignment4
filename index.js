@@ -32,7 +32,7 @@ const orderRoutes = require("./routes/orderRouter");
 
 app.use("/users", userRoutes);
 app.use("/products", productRoutes);
-app.use("/cart", cartRoutes);
+app.use("/carts", cartRoutes);
 app.use("/comments", commentRoutes);
 app.use("/orders", orderRoutes);
 
