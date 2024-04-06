@@ -20,21 +20,21 @@ mongoose.connect(process.env.MONGODB_URL).then(() => {
 const User = require("./models/User");
 const Product = require("./models/Product");
 const Cart = require("./models/Cart");
-// const Comment = require("./models/Comment");
-// const Order = require("./models/Order");
+const Comment = require("./models/Comment");
+const Order = require("./models/Order");
 
 // Define Routes
 const userRoutes = require("./routes/userRouter");
 const productRoutes = require("./routes/productRouter");
 const cartRoutes = require("./routes/cartRouter");
-// const commentRoutes = require("./routes/commentRoutes");
-// const orderRoutes = require("./routes/orderRoutes");
+const commentRoutes = require("./routes/commentRouter");
+const orderRoutes = require("./routes/orderRouter");
 
 app.use("/users", userRoutes);
 app.use("/products", productRoutes);
-app.use("/carts", cartRoutes);
-// app.use("/comments", commentRoutes);
-// app.use("/orders", orderRoutes);
+app.use("/cart", cartRoutes);
+app.use("/comments", commentRoutes);
+app.use("/orders", orderRoutes);
 
 // Start Server
 app.listen(PORT, () => {

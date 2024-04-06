@@ -27,6 +27,52 @@ router.get("/:id", getComment, (req, res) => {
   res.json(res.comment);
 });
 
+//update a comment by ID
+router.patch("/:id", getComment, async (req, res) => {
+  if (req.body.content != null) {
+    res.comment.content = req.body.content;
+  }
+  try {
+    const updatedComment = await res.comment.save();
+    res.json(updatedComment);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+});
+
+//delete a comment by ID
+router.delete("/:id", getComment, async (req, res) => {
+  try {
+    await res.comment.deleteOne();
+    res.json({ message: "Comment deleted" });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+//get all comments by product ID
+router.get("/product/:id", async (req, res) => {
+  try {
+    const comments = await Comment.find({ productId: req.params.id });
+    res.json(comments);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+//get all comments by user ID for a product
+router.get("/user/:userId/product/:productId", async (req, res) => {
+  try {
+    const comments = await Comment.find({
+      userId: req.params.userId,
+      productId: req.params.productId,
+    });
+    res.json(comments);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
 // Middleware to get comment by ID
 async function getComment(req, res, next) {
   let comment;

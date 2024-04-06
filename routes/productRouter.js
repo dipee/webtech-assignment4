@@ -52,6 +52,16 @@ router.patch("/:id", getProduct, async (req, res) => {
   }
 });
 
+//delete a product by ID
+router.delete("/:id", getProduct, async (req, res) => {
+  try {
+    await res.product.deleteOne();
+    res.json({ message: "Product deleted" });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
 // Middleware to get product by ID
 async function getProduct(req, res, next) {
   let product;
