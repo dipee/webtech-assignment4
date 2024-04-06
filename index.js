@@ -2,6 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
+require("dotenv").config(); // Load environment variables from .env file
+
 // Initialize Express
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -10,13 +12,9 @@ const PORT = process.env.PORT || 3000;
 app.use(bodyParser.json());
 
 // MongoDB Connection
-mongoose
-  .connect(
-    "mongodb+srv://dipen2052:d9848881586@portfolio.hself86.mongodb.net/?retryWrites=true&w=majority"
-  )
-  .then(() => {
-    console.log("Connected to the database!");
-  });
+mongoose.connect(process.env.MONGODB_URL).then(() => {
+  console.log("Connected to the database!");
+});
 
 // Define Mongoose Models
 const User = require("./models/User");
