@@ -1,5 +1,4 @@
 const express = require("express");
-const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
 require("dotenv").config(); // Load environment variables from .env file
@@ -9,7 +8,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
-app.use(bodyParser.json());
+app.use(express.json());
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGODB_URL).then(() => {
