@@ -58,18 +58,18 @@ GET /products/:id: Get a product by ID
 
 ### Carts
 
-POST /carts: Create a new cart
-GET /carts: Get all carts
-GET /carts/:id: Get a cart by ID
+- POST /carts: Create a new cart
+- GET /carts: Get all carts
+- GET /carts/:id: Get a cart by ID
 
 ### Comments
 
-POST /comments: Create a new comment
-GET /comments: Get all comments
-GET /comments/:id: Get a comment by ID
+- POST /comments: Create a new comment
+- GET /comments: Get all comments
+- GET /comments/:id: Get a comment by ID
 
 ### Orders
 
-POST /orders: Create a new order
-GET /orders: Get all orders
-GET /orders/:id: Get an order by ID
+- POST /orders: Create a new order
+- GET /orders: Get all orders
+- GET /orders/:id: Get an order by ID
