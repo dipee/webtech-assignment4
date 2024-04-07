@@ -1,0 +1,2211 @@
+{
+	"info": {
+		"_postman_id": "013d33d7-cdff-44ed-96de-eba087c92595",
+		"name": "WEBTECH ASSIGN4",
+		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Tests\" tab**\n\nTests help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/b5f280a7-4b09-48ec-857f-0a7ed99d7ef8/U2NyZWVuc2hvdCAyMDIzLTAzLTI3IGF0IDkuNDcuMjggUE0ucG5n\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) in \"Tests\" to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12878193"
+	},
+	"item": [
+		{
+			"name": "User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/users",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users"
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "137"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"89-CuzRecu3FtXGYtuJbJ7VgPCr0uY\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 06 Apr 2024 23:12:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"660ddd6f6c0380c4d564450a\",\n        \"username\": \"John\",\n        \"email\": \"j@gmail.com\",\n        \"password\": \"heyJohn\",\n        \"shippingAddress\": \"new address\",\n        \"__v\": 0\n    }\n]"
+				},
+				{
+					"name": "list multiple",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "465"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d1-kr4SMnNsAZDX0IYRREvrC+kQHxQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 06 Apr 2024 23:15:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"660ddd6f6c0380c4d564450a\",\n        \"username\": \"John\",\n        \"email\": \"j@gmail.com\",\n        \"password\": \"heyJohn\",\n        \"shippingAddress\": \"new address\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6611d70e83fa10132316f441\",\n        \"username\": \"hari\",\n        \"email\": \"hari@gamil.com\",\n        \"password\": \"hari1234\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6611d74383fa10132316f445\",\n        \"username\": \"hari\",\n        \"email\": \"hari@gamissl.com\",\n        \"password\": \"hari1234\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6611d77283fa10132316f448\",\n        \"username\": \"Ramesh\",\n        \"email\": \"hey@gamil.com\",\n        \"password\": \"ramesh123\",\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"Ramesh\",\n    \"password\": \"ramesh123\",\n    \"email\": \"hey@gamil.com\",\n    \"shipping_address\": \"haris shipping address\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/users",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users"
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"hari\",\n    \"password\": \"hari1234\",\n    \"email\": \"hari@gamil.com\",\n    \"shipping_address\": \"his shipping adderess \"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "107"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"6b-4ZGdSr7c6MNf7jMugphchsQCqG0\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 06 Apr 2024 23:13:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"username\": \"hari\",\n    \"email\": \"hari@gamil.com\",\n    \"password\": \"hari1234\",\n    \"_id\": \"6611d70e83fa10132316f441\",\n    \"__v\": 0\n}"
+				},
+				{
+					"name": "uplicate email",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"hari\",\n    \"password\": \"hari1234\",\n    \"email\": \"hari@gamil.com\"\n \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "117"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"75-eLtJPzE22jA/VbuJMRyFt5eeMyg\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 06 Apr 2024 23:13:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"E11000 duplicate key error collection: test.users index: email_1 dup key: { email: \\\"hari@gamil.com\\\" }\"\n}"
+				},
+				{
+					"name": "invalid data",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"hari\",\n    \"password\": \"hari1234\"\n\n \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "70"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"46-6ouKSBAhltHw0wcLMSAiU+mjPm0\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 06 Apr 2024 23:14:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User validation failed: email: Path `email` is required.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"newss update\",\n    \"email\": \"updated@gmail.com\",\n    \"shipping_address\": \"new shipping\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/users/6611d70e83fa10132316f4",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users",
+						"6611d70e83fa10132316f4"
+					]
+				},
+				"description": "This is a PUT request and it is used to overwrite an existing piece of data. For instance, after you create an entity with a POST request, you may want to modify that later. You can do that using a PUT request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful PUT request typically returns a `200 OK`, `201 Created`, or `204 No Content` response code."
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"newss update\",\n    \"email\": \"updated@gmail.com\",\n    \"shipping_address\": \"new shipping\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users/6611d70e83fa10132316f441",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"6611d70e83fa10132316f441"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "118"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"76-qm6rmjcV/uzz+cVqBGUYRmod8oY\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 06 Apr 2024 23:16:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"6611d70e83fa10132316f441\",\n    \"username\": \"newss update\",\n    \"email\": \"updated@gmail.com\",\n    \"password\": \"hari1234\",\n    \"__v\": 0\n}"
+				},
+				{
+					"name": "not found",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"newss update\",\n    \"email\": \"updated@gmail.com\",\n    \"shipping_address\": \"new shipping\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users/6611d70e83fa10132316f4",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"6611d70e83fa10132316f4"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "123"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"7b-tEIT7MpxJAa0cQNJLP5m2IP31jE\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 06 Apr 2024 23:16:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Cast to ObjectId failed for value \\\"6611d70e83fa10132316f4\\\" (type string) at path \\\"_id\\\" for model \\\"User\\\"\"\n}"
+				}
+			]
+		},
+		{
+			"name": "User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/users/6611d77283fa10132316f448",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users",
+						"6611d77283fa10132316f448"
+					]
+				},
+				"description": "This is a DELETE request, and it is used to delete data that was previously created via a POST request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful DELETE request typically returns a `200 OK`, `202 Accepted`, or `204 No Content` response code."
+			},
+			"response": [
+				{
+					"name": "succcess",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users/6611d77283fa10132316f448",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"6611d77283fa10132316f448"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "26"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1a-+BFCXZBji7vrbkrwyE5s2YKViik\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 06 Apr 2024 23:24:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User deleted\"\n}"
+				},
+				{
+					"name": "not found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users/6611d77283fa10132316f448",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"6611d77283fa10132316f448"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "28"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1c-ZEVVcvtFhxKX/QUvVKqKxwGbbNA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 06 Apr 2024 23:24:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/products",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "232"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e8-KdR91uR5QBcDSnNnS7Fs4JkhGaY\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 06 Apr 2024 23:27:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"6611da536a54442478a95e77\",\n        \"name\": \"apple\",\n        \"price\": 20,\n        \"description\": \"sweet apple\",\n        \"shippingCost\": 100,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6611da6e6a54442478a95e79\",\n        \"name\": \"orange\",\n        \"price\": 10,\n        \"description\": \"big orange\",\n        \"shippingCost\": 90,\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"apple\",\n \n    \"price\": 10,\n    \"description\": \"big apple\",\n    \"shippingCost\": 90\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/products",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "invalid data",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"apple\",\n \n    \"price\": 20,\n    \"description\": \"sweet apple\",\n    \"shippingCost\": 100\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "87"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"57-cgyAgFKB2xMOEch+R9/OOftZsdU\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 06 Apr 2024 23:26:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Product validation failed: shippingCost: Path `shippingCost` is required.\"\n}"
+				},
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"apple\",\n \n    \"price\": 20,\n    \"description\": \"sweet apple\",\n    \"shippingCost\": 100\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "115"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"73-KSo1Ot2dglIhMNjVpqTo6vn5Jls\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 06 Apr 2024 23:27:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"apple\",\n    \"price\": 20,\n    \"description\": \"sweet apple\",\n    \"shippingCost\": 100,\n    \"_id\": \"6611da536a54442478a95e77\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"price\": 102\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/products/6611da536a54442478a95e",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"products",
+						"6611da536a54442478a95e"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"price\": 102\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products/6611da536a54442478a95e77",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"6611da536a54442478a95e77"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "116"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"74-y2gpZzLORIeb9QC5rWmS6+5/igU\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 06 Apr 2024 23:29:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"6611da536a54442478a95e77\",\n    \"name\": \"apple\",\n    \"price\": 102,\n    \"description\": \"sweet apple\",\n    \"shippingCost\": 100,\n    \"__v\": 0\n}"
+				},
+				{
+					"name": "not found",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"price\": 102\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products/6611da536a54442478a95e",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"6611da536a54442478a95e"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "126"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"7e-FTJijzMdg09HOPt364XoWG/VoNw\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 06 Apr 2024 23:29:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Cast to ObjectId failed for value \\\"6611da536a54442478a95e\\\" (type string) at path \\\"_id\\\" for model \\\"Product\\\"\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/products/6611da536a54442478a95e77",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"products",
+						"6611da536a54442478a95e77"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "error",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/6611da536a54442478a95e77",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"6611da536a54442478a95e77"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'none'"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "175"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 06 Apr 2024 23:30:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <title>Error</title>\n    </head>\n    <body>\n        <pre>Cannot DELETE /products/6611da536a54442478a95e77</pre>\n    </body>\n</html>"
+				},
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/6611da536a54442478a95e77",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"6611da536a54442478a95e77"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d-SUOjrQM9v/ZnWfd464qBypgAgyE\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 06 Apr 2024 23:30:56 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Product deleted\"\n}"
+				}
+			]
+		},
+		{
+			"name": "comment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/comments",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"comments"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/comments",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"comments"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "165"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a5-e9mQRAzGQHNfXVfY3bUZM/WEhZQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 06 Apr 2024 23:34:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"6611dbe1fd97181c1c4ec2c8\",\n        \"productId\": \"6611da6e6a54442478a95e79\",\n        \"userId\": \"660ddd6f6c0380c4d564450a\",\n        \"text\": \"nice product do recommend\",\n        \"rating\": 4,\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "comment by ptoduct",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/comments/product/6611da6e6a54442478a95e79",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"comments",
+						"product",
+						"6611da6e6a54442478a95e79"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/comments/product/6611da6e6a54442478a95e79",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"comments",
+								"product",
+								"6611da6e6a54442478a95e79"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "165"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a5-e9mQRAzGQHNfXVfY3bUZM/WEhZQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 06 Apr 2024 23:38:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"6611dbe1fd97181c1c4ec2c8\",\n        \"productId\": \"6611da6e6a54442478a95e79\",\n        \"userId\": \"660ddd6f6c0380c4d564450a\",\n        \"text\": \"nice product do recommend\",\n        \"rating\": 4,\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "comment by product and user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/comments/user/660ddd6f6c0380c4d564450a/product/6611da6e6a54442478a95e79",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"comments",
+						"user",
+						"660ddd6f6c0380c4d564450a",
+						"product",
+						"6611da6e6a54442478a95e79"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/comments/user/660ddd6f6c0380c4d564450a/product/6611da6e6a54442478a95e79",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"comments",
+								"user",
+								"660ddd6f6c0380c4d564450a",
+								"product",
+								"6611da6e6a54442478a95e79"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "165"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a5-e9mQRAzGQHNfXVfY3bUZM/WEhZQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 06 Apr 2024 23:41:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"6611dbe1fd97181c1c4ec2c8\",\n        \"productId\": \"6611da6e6a54442478a95e79\",\n        \"userId\": \"660ddd6f6c0380c4d564450a\",\n        \"text\": \"nice product do recommend\",\n        \"rating\": 4,\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "comment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"productId\": \"6611da6e6a54442478a5e79\",\n    \"userId\": \"660ddd6f6c0380c4d564450a\", \n    \"rating\": 4,\n    \"text\": \"nice product do recommend\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/comments",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"comments"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productId\": \"6611da6e6a54442478a95e79\",\n    \"userId\": \"660ddd6f6c0380c4d564450a\", \n    \"rating\": 4,\n    \"text\": \"nice product do recommend\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/comments",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"comments"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "163"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a3-qa69yZZYzPwfPF96N77hEfuHZ6w\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 06 Apr 2024 23:33:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"productId\": \"6611da6e6a54442478a95e79\",\n    \"userId\": \"660ddd6f6c0380c4d564450a\",\n    \"text\": \"nice product do recommend\",\n    \"rating\": 4,\n    \"_id\": \"6611dbe1fd97181c1c4ec2c8\",\n    \"__v\": 0\n}"
+				},
+				{
+					"name": "failure",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productId\": \"6611da6e6a54442478a5e79\",\n    \"userId\": \"660ddd6f6c0380c4d564450a\", \n    \"rating\": 4,\n    \"text\": \"nice product do recommend\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/comments",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"comments"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "174"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ae-dNK7i4UI8q8MlMHDNzsiLX+VepA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 06 Apr 2024 23:34:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Comment validation failed: productId: Cast to ObjectId failed for value \\\"6611da6e6a54442478a5e79\\\" (type string) at path \\\"productId\\\" because of \\\"BSONError\\\"\"\n}"
+				}
+			]
+		},
+		{
+			"name": "comment",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"text\": \"updated text for comment\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/comments/6611dc15fd97181c1c4ec2cc",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"comments",
+						"6611dc15fd97181c1c4ec2cc"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"text\": \"updated text for comment\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/comments/6611dc15fd97181c1c4ec2cc",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"comments",
+								"6611dc15fd97181c1c4ec2cc"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "142"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"8e-tuHFvwxBX6JyFB1UVuTakkcpeQc\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 06 Apr 2024 23:36:48 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"6611dc15fd97181c1c4ec2cc\",\n    \"productId\": \"6611da6e6a54442478a95e79\",\n    \"userId\": \"6611d70e83fa10132316f441\",\n    \"text\": \"jucy\",\n    \"rating\": 4,\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "comment",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/comments/6611dc15fd97181c1c4ec2cc",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"comments",
+						"6611dc15fd97181c1c4ec2cc"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/comments/6611dc15fd97181c1c4ec2cc",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"comments",
+								"6611dc15fd97181c1c4ec2cc"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d-+7dttf6TMeUXpmYyRtIWXCeHyZw\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 06 Apr 2024 23:37:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Comment deleted\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/carts",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"carts"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/carts",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"carts"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "181"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b5-gReFLgF9wOl6AKSs/RzV0FaRx8M\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 06 Apr 2024 23:48:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"6611df1b30efe1945a191c15\",\n        \"userId\": \"660ddd6f6c0380c4d564450a\",\n        \"products\": [\n            {\n                \"productId\": \"6611df0130efe1945a191c12\",\n                \"quantity\": 10,\n                \"_id\": \"6611df1b30efe1945a191c16\"\n            }\n        ],\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"660ddd6f6c0380c4d564450a\",\n    \"products\": [\n        {\n            \"productId\": \"6611df0130efe1945a191c12\",\n            \"quantity\": 10\n        }\n    ]\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/carts",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"carts"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"660ddd6f6c0380c4d564450a\",\n    \"products\": [\n        {\n            \"productId\": \"6611df0130efe1945a191c12\",\n            \"quantity\": 10\n        }\n    ]\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/carts",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"carts"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "179"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b3-uwo40JEyr9rRi91O01RrOdb1gQc\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 06 Apr 2024 23:47:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"userId\": \"660ddd6f6c0380c4d564450a\",\n    \"products\": [\n        {\n            \"productId\": \"6611df0130efe1945a191c12\",\n            \"quantity\": 10,\n            \"_id\": \"6611df1b30efe1945a191c16\"\n        }\n    ],\n    \"_id\": \"6611df1b30efe1945a191c15\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "add item to cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \n\n        \n            \"productId\": \"6611df0130efe1945a191c12\",\n            \"quantity\": 3\n        \n\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/carts/6611dfad30efe1945a191c21",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"carts",
+						"6611dfad30efe1945a191c21"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \n\n        \n            \"productId\": \"6611df0130efe1945a191c12\",\n            \"quantity\": 3\n        \n\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/carts/6611dfad30efe1945a191c21",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"carts",
+								"6611dfad30efe1945a191c21"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "266"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"10a-Cmhxn3cH7CRFqb4cYEU3KGpo5xY\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 06 Apr 2024 23:51:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"6611dfad30efe1945a191c21\",\n    \"userId\": \"660ddd6f6c0380c4d564450a\",\n    \"products\": [\n        {\n            \"productId\": \"6611df5630efe1945a191c1a\",\n            \"quantity\": 12,\n            \"_id\": \"6611dfad30efe1945a191c22\"\n        },\n        {\n            \"productId\": \"6611df0130efe1945a191c12\",\n            \"quantity\": 3,\n            \"_id\": \"6611e00430efe1945a191c2f\"\n        }\n    ],\n    \"__v\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/carts/6611df1b30efe1945a191c15",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"carts",
+						"6611df1b30efe1945a191c15"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/carts/6611df1b30efe1945a191c15",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"carts",
+								"6611df1b30efe1945a191c15"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "179"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b3-OWpX1K+pIHbguU5TYL38AW/QIHE\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 06 Apr 2024 23:53:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"6611df1b30efe1945a191c15\",\n    \"userId\": \"660ddd6f6c0380c4d564450a\",\n    \"products\": [\n        {\n            \"productId\": \"6611df0130efe1945a191c12\",\n            \"quantity\": 10,\n            \"_id\": \"6611df1b30efe1945a191c16\"\n        }\n    ],\n    \"__v\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"660ddd6f6c0380c4d564450a\",\n    \"products\": [\n        {\n            \"productId\": \"6611df0130efe1945a191c12\",\n            \"quantity\": 10,\n            \"price\": 200\n        }\n    ],\n    \"totalPrice\": 20\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/orders",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"660ddd6f6c0380c4d564450a\",\n    \"products\": [\n        {\n            \"productId\": \"6611df0130efe1945a191c12\",\n            \"quantity\": 10,\n            \"price\": 200\n        }\n    ],\n    \"totalPrice\": 20\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/orders",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "207"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"cf-IK0uIvp1U1Mc5Wef/Ew0dczqJHg\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 Apr 2024 00:17:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"userId\": \"660ddd6f6c0380c4d564450a\",\n    \"products\": [\n        {\n            \"productId\": \"6611df0130efe1945a191c12\",\n            \"quantity\": 10,\n            \"price\": 200,\n            \"_id\": \"6611e626c1856bab117c5378\"\n        }\n    ],\n    \"totalPrice\": 20,\n    \"_id\": \"6611e626c1856bab117c5377\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/orders",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/orders",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "209"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d1-phfkY93VhVL4uwAi5NA2ex/0QWI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 Apr 2024 00:17:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"6611e626c1856bab117c5377\",\n        \"userId\": \"660ddd6f6c0380c4d564450a\",\n        \"products\": [\n            {\n                \"productId\": \"6611df0130efe1945a191c12\",\n                \"quantity\": 10,\n                \"price\": 200,\n                \"_id\": \"6611e626c1856bab117c5378\"\n            }\n        ],\n        \"totalPrice\": 20,\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://postman-rest-api-learner.glitch.me/"
+		}
+	]
+}
