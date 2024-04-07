@@ -46,27 +46,39 @@ npm start
 
 ### Users
 
-POST /users: Create a new user
-GET /users: Get all users
-GET /users/:id: Get a user by ID
+- POST /users: Create a new user
+- GET /users: Get all users
+- GET /users/:id: Get a user by ID
+- PATCH /users/:id update a user
+- DELETE /users/:id delete a user
 
 ### Products
 
-POST /products: Create a new product
-GET /products: Get all products
-GET /products/:id: Get a product by ID
+- POST /products: Create a new product
+- GET /products: Get all products
+- GET /products/:id: Get a product by ID
+- PATCH /products/:id update a product by ID
+- DELETE /products/:id delete product
 
 ### Carts
 
 - POST /carts: Create a new cart
 - GET /carts: Get all carts
 - GET /carts/:id: Get a cart by ID
+- GET /carts/user/:id: get all carts of a u
+- POST /carts/:id : add product to cartser
+- DELETE /carts/product/:id : remove item from cart
+- DELETE /carts/:id : delete cart by id
 
 ### Comments
 
 - POST /comments: Create a new comment
 - GET /comments: Get all comments
 - GET /comments/:id: Get a comment by ID
+- PATCH /comments/:id update comment
+- DELETE /comments/:id delete a comment
+- GET /comments/product/:id get comments of a product
+- GET /comments/user/:userId/product/:productId : get all coments of a user for a product
 
 ### Orders
 

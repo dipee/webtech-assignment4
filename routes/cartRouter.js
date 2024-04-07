@@ -49,7 +49,7 @@ router.post("/:id", getCart, async (req, res) => {
 });
 
 // remove item from cart
-router.delete("/:id", getCart, async (req, res) => {
+router.delete("/product/:id", getCart, async (req, res) => {
   res.cart.products.pull(req.body);
   try {
     const updatedCart = await res.cart.save();
