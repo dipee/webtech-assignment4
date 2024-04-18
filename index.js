@@ -1,11 +1,12 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 
 require("dotenv").config(); // Load environment variables from .env file
 
 // Initialize Express
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // Middleware
 app.use(express.json());
@@ -28,6 +29,9 @@ const productRoutes = require("./routes/productRouter");
 const cartRoutes = require("./routes/cartRouter");
 const commentRoutes = require("./routes/commentRouter");
 const orderRoutes = require("./routes/orderRouter");
+
+//add cors to allow cross origin requests
+app.use(cors());
 
 app.use("/users", userRoutes);
 app.use("/products", productRoutes);

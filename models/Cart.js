@@ -6,6 +6,10 @@ const cartSchema = new mongoose.Schema({
     ref: "User",
     required: true,
   },
+  isCheckOut: {
+    type: Boolean,
+    default: false,
+  },
   products: [
     {
       productId: {

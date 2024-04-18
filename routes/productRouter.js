@@ -51,7 +51,15 @@ router.patch("/:id", getProduct, async (req, res) => {
     res.status(400).json({ message: err.message });
   }
 });
-
+//delete all products
+router.delete("/", async (req, res) => {
+  try {
+    await Product.deleteMany();
+    res.json({ message: "All products deleted" });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
 //delete a product by ID
 router.delete("/:id", getProduct, async (req, res) => {
   try {

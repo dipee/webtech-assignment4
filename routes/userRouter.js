@@ -60,6 +60,20 @@ router.delete("/:id", getUser, async (req, res) => {
   }
 });
 
+//login a user
+router.post("/login", async (req, res) => {
+  try {
+    const user = await User.findOne({ email: req.body.email });
+    if (user && user.password === req.body.password) {
+      res.json(user);
+    } else {
+      res.status(400).json({ message: "Invalid email or password" });
+    }
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
 // Middleware to get user by ID
 async function getUser(req, res, next) {
   let user;
