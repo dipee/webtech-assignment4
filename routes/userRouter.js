@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
+const Cart = require("../models/Cart");
 
 // Create a new user
 router.post("/", async (req, res) => {
@@ -64,11 +65,13 @@ router.delete("/:id", getUser, async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const user = await User.findOne({ email: req.body.email });
-    if (user && user.password === req.body.password) {
-      res.json(user);
-    } else {
-      res.status(400).json({ message: "Invalid email or password" });
+    if (!user) {
+      return res.status(400).json({ message: "User not found" });
     }
+    if (user.password !== req.body.password) {
+      return res.status(400).json({ message: "Invalid credentials" });
+    }
+    return res.json(user);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

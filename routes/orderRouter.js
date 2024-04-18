@@ -1,9 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const Order = require("../models/Order");
+const Cart = require("../models/Cart");
 
 // Create a new order
 router.post("/", async (req, res) => {
+  //set cart to checked out
+  await setCartToCheckedOut(req, res);
   try {
     const order = await Order.create(req.body);
     res.status(201).json(order);
@@ -50,6 +53,19 @@ async function getOrder(req, res, next) {
   }
   res.order = order;
   next();
+}
+
+//set cart to checked out
+async function setCartToCheckedOut(req, res) {
+  const userId = req.body.userId;
+
+  const cart = await Cart.findOne({
+    userId: userId,
+    isCheckOut: false,
+  });
+  //set cart to checked out
+  cart.isCheckOut = true;
+  cart.save();
 }
 
 module.exports = router;

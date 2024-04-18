@@ -6,6 +6,14 @@ const orderSchema = new mongoose.Schema({
     ref: "User",
     required: true,
   },
+  totalPrice: {
+    type: Number,
+    required: true,
+  },
+  totalTax: {
+    type: Number,
+    required: true,
+  },
   products: [
     {
       productId: {
@@ -23,10 +31,6 @@ const orderSchema = new mongoose.Schema({
       },
     },
   ],
-  totalPrice: {
-    type: Number,
-    required: true,
-  },
 });
 
 const Order = mongoose.model("Order", orderSchema);
