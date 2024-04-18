@@ -9,6 +9,7 @@ router.get("/user/:userID", async (req, res) => {
       userId: req.params.userID,
       isCheckOut: false,
     });
+
     res.json(cart);
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -30,7 +31,13 @@ router.post("/user/:userId", async (req, res) => {
         userId: req.params.userId,
         isCheckOut: false,
         products: [
-          { productId: req.body.productId, quantity: req.body.quantity },
+          {
+            productId: req.body.productId,
+            quantity: req.body.quantity,
+            name: req.body.name,
+            price: req.body.price,
+            image: req.body.image,
+          },
         ],
       });
       return res.json(newCart);
@@ -59,7 +66,7 @@ router.post("/user/:userId", async (req, res) => {
   }
 });
 
-// remove item from cart
+// rdecrease qty from cart
 router.delete("/:cartId/product/:productId", async (req, res) => {
   // get the cart by id
   const cart = await Cart.findById(req.params.cartId);
@@ -94,4 +101,13 @@ router.delete("/:cartId/remove_product/:productId", async (req, res) => {
   res.json(cart);
 });
 
+// delete all carts
+router.delete("/", async (req, res) => {
+  try {
+    await Cart.deleteMany();
+    res.json({ message: "All carts deleted" });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
 module.exports = router;
